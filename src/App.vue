@@ -1,13 +1,24 @@
 <template>
-  <h1>{{ msg }}</h1>
+  <SearchInput />
+  <MovieList />
 </template>
 
 <script>
+import SearchInput from "src/components/SearchInput";
+import MovieList from "src/components/MovieList"
+
 export default {
-  data() {
-    return {
-      msg: "Hello Vue!",
-    };
-  },
+  components: { SearchInput, MovieList },
 };
 </script>
+
+<style>
+.body {
+	border: 0; 
+	margin: 0;
+}
+
+#app {
+	background-color: white;
+}
+</style>
