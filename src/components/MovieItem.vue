@@ -53,6 +53,7 @@ export default {
 	align-items: center;
 	text-align: center;
 	margin: 10px 20px;
+	cursor: pointer;
 
 	.poster {
 		max-height: 330px;

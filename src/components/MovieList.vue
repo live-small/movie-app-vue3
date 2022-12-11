@@ -6,7 +6,7 @@
       :title="movie.Title"
       :img-url="movie.Poster"
       :year="movie.Year"
-      @click="movieAppStore.getMovieData" />
+      @click="movieAppStore.getMovieData(movie.imdbID)" />
   </ul>
 </template>
 
@@ -21,7 +21,7 @@ export default {
 		const movieAppStore = useMovieAppStore();
 		
 		return {
-			movieAppStore
+			movieAppStore, 
 		}
 	}
 }

@@ -5,6 +5,7 @@ export const useMovieAppStore = defineStore("movie", {
   state: () => ({
     isLoading: false,
     movieList: [],
+    currentClickedMovie: null,
   }),
   actions: {
     async searchMovieList(query, page) {
@@ -15,9 +16,13 @@ export const useMovieAppStore = defineStore("movie", {
     },
     async getMovieData(movieId) {
       this.isLoading = true;
-      const t = await fetchMovieDetail(movieId || "tt4520988");
-      console.log(t);
+      this.currentClickedMovie = await fetchMovieDetail(movieId);
       this.isLoading = false;
+    },
+    closeModal() {
+      if (!this.currentClickedMovie) return;
+
+      this.currentClickedMovie = null;
     },
   },
 });
