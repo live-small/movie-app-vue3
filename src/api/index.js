@@ -1,13 +1,13 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: VUE_APP_API_END_POINT,
+  baseURL: API_END_POINT,
 });
 
 export const fetchMovieList = async (query, page = 1) => {
   const response = await axiosInstance.get("/", {
     params: {
-      apikey: VUE_APP_API_KEY,
+      apikey: API_KEY,
       s: query,
       page,
     },
@@ -20,7 +20,7 @@ export const fetchMovieList = async (query, page = 1) => {
 export const fetchMovieDetail = async (id) => {
   const response = await axiosInstance.get("/", {
     params: {
-      apikey: VUE_APP_API_KEY,
+      apikey: API_KEY,
       i: id,
       plot: "full",
     },

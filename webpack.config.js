@@ -39,8 +39,8 @@ module.exports = {
       patterns: [{ from: "static" }],
     }),
     new webpack.DefinePlugin({
-      VUE_APP_API_KEY: JSON.stringify(env.VUE_APP_API_KEY),
-      VUE_APP_API_END_POINT: JSON.stringify(env.VUE_APP_API_END_POINT),
+      API_KEY: JSON.stringify(env.API_KEY),
+      API_END_POINT: JSON.stringify(env.API_END_POINT),
     }),
   ],
 
